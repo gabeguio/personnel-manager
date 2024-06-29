@@ -1,0 +1,10 @@
+header {
+    text-align: center;
+    background-color: beige;
+    font-size: 20px;
+    padding-top: .5em;  /* dependent on font-size */
+}
+
+header h1 {
+    padding: .35em 0em;
+}

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>AngularBasics</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    <!-- 
+      Inside the body, we only have the app component
+      syntax below is how your add individual components to the page
+      find the "selector" value inside the @Component area of the TS file for your component
+        @Component({
+          selector: 'app-root',
+          standalone: true,
+          imports: [RouterOutlet],
+          templateUrl: './app.component.html',
+          styleUrl: './app.component.css'
+        })
+    -->
+  <app-root></app-root>
+</body>
+</html>
