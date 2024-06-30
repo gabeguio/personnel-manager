@@ -35,12 +35,13 @@ public class EmployeeService {
                 employeePage.getContent());
     }
 	
-	//	// create a new employee
-	//	public Employee createEmployee(Employee employee) {
-	//		if (!repo.existsById(employee.getEmployeeId()))
-	//			return null;
-	//		return repo.save(employee);
-	//	}
+	// create a new employee
+	public Employee createEmployee(Employee employee) {
+		if (!crudRepo.existsById(employee.getEmployeeId()))
+			return null;
+		return crudRepo.save(employee);
+	}
+	
 	//	
 	//	// get all employees
 	//	public Iterable<Employee> getAllEmployees() {
