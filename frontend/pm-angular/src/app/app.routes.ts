@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { DepartmentsComponent } from './departments/departments.component';
+import { EmployeesComponent } from './employees/employees.component';
+import { BlankComponent } from './blank/blank.component';
 
 // creating route for our router outlet
 // each "page" needs a route
@@ -9,10 +9,10 @@ import { DepartmentsComponent } from './departments/departments.component';
 export const routes: Routes = [
     {
         path: '',
-        component: HomeComponent
+        component: BlankComponent
     },
     {
-        path:'departments',
-        component: DepartmentsComponent
+        path:'employees',
+        component: EmployeesComponent
     }
 ];

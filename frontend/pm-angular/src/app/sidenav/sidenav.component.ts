@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-nav',
+  selector: 'app-sidenav',
   standalone: true,
   imports: [RouterLink],
-  templateUrl: './nav.component.html',
-  styleUrl: './nav.component.css'
+  templateUrl: './sidenav.component.html',
+  styleUrl: './sidenav.component.css'
 })
-export class NavComponent {
+export class SidenavComponent {
 
 }

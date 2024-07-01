@@ -1,9 +1,0 @@
-<!-- <h2>Name: {{ employees[0].firstName }} {{ employees[0].lastName }}</h2>
-<h3>Email: {{ employees[0].email }}</h3>
-<h4>Office: Office Id{{ employees[0].office.officeId }}</h4> -->
-
-<ng-container *ngFor="let e of employees">
-  <h2>Name: {{ e.firstName }} {{ e.lastName }}</h2>
-  <h3>Email: {{ e.email }}</h3>
-  <h4>OfficeId: {{ e.office.officeId }}</h4>
-</ng-container>
