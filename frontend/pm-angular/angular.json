@@ -27,7 +27,9 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/modern-normalize.css",
+              "src/styles.css",
+              "src/utils.css"
             ],
             "scripts": []
           },
