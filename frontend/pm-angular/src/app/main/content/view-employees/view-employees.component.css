@@ -1,11 +1,11 @@
-table {
+.content-display-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 1em;
     background-color: var(--clr-light);
 }
 
-table tr th {
+.content-display-table tr th {
     background-color: var(--clr-gray50);
     border-bottom: 1.5px solid var(--clr-gray400);
     border-top: 1.5px solid var(--clr-gray400);
@@ -15,11 +15,11 @@ table tr th {
     text-align: left;
 }
 
-table tr {
+.content-display-table tr {
     border-bottom: 1px solid var(--clr-gray200);
 }
 
-table tr td {
+.content-display-table tr td {
     border-bottom: 1px solid var(--clr-gray200);
     color: var(--clr-gray800);
     padding: 0.5em 1em;
@@ -40,10 +40,3 @@ p {
     color: var(--clr-gray600);
     font-weight: normal;
 }
-
-.icon {
-    width: 24px;
-    height: 24px;
-    color: var(--clr-dark);
-}
-

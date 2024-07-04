@@ -1,0 +1,32 @@
+<div class="content-container">
+    <h1 class="content-header-title">
+        Employees
+    </h1>
+    <button class="btn">
+        <img src="/public/icons/plus.svg" alt="Plus Icon">
+        <span>New Employee</span>
+    </button>
+</div>
+<div class="content-display">
+    <div>
+        <table class="content-display-table">
+            <thead>
+                <tr>
+                    <th>Employee Name</th>
+                    <th>Job Title</th>
+                    <th>Employment Status</th>
+                    <th>Department</th>
+                    <th>Office Id</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let employee of employees">
+                    <td class="tableName">{{ employee.firstName + " " + employee.lastName}} <p>{{ employee.email }}</p></td>
+                    <td class="tableAttribute">{{ employee.jobTitle ? employee.jobTitle : 'Pending...' }}</td>
+                    <td class="tableAttribute">{{ employee.employementStatus }}</td>
+                    <td class="tableAttribute">{{ employee.departmentName ? employee.departmentName : 'Pending...' }}</td>
+                    <td class="tableAttribute">{{ employee.office.officeId }}</td>
+                </tr>
+        </table>
+    </div>
+</div>

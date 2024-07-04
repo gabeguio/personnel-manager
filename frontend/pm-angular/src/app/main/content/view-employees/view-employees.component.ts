@@ -2,14 +2,16 @@ import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 
+// HttpCommonModule
+
 @Component({
-  selector: 'app-employees',
+  selector: 'app-view-employees',
   standalone: true,
-  imports: [HttpClientModule, CommonModule],
-  templateUrl: './employees.component.html',
-  styleUrl: './employees.component.css'
+  imports: [CommonModule, HttpClientModule],
+  templateUrl: './view-employees.component.html',
+  styleUrl: './view-employees.component.css'
 })
-export class EmployeesComponent {
+export class ViewEmployeesComponent {
   data: any = [];
   employees: any = [];
 
@@ -24,5 +26,4 @@ export class EmployeesComponent {
         console.log(this.employees)
       })
   }
-
 }

@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
-import { EmployeesComponent } from '../employees/employees.component';
-import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
