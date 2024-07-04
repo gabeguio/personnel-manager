@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap');
+
 :root {
   --clr-dark: #262626;
   --clr-light: #ffffff;
@@ -51,7 +53,7 @@ html {
 }
 
 body {
-  font-family: 'General Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: var(--clr-light);
   color: var(--clr-dark);
 }
