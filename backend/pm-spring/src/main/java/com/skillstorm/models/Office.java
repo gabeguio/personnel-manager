@@ -20,7 +20,7 @@ public class Office {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "office_id")
-	private int officeId;
+	private Integer officeId;
 	
 	@Column(name = "max_capacity")
 	private int maxCapacity;
@@ -45,7 +45,7 @@ public class Office {
 		super();
 	}
 
-	public Office(int officeId, int maxCapacity, String streetAddress, String city, String state, String phone,
+	public Office(Integer officeId, int maxCapacity, String streetAddress, String city, String state, String phone,
 			List<Employee> employees) {
 		super();
 		this.officeId = officeId;
@@ -57,11 +57,11 @@ public class Office {
 		this.employees = employees;
 	}
 
-	public int getOfficeId() {
+	public Integer getOfficeId() {
 		return officeId;
 	}
 
-	public void setOfficeId(int officeId) {
+	public void setOfficeId(Integer officeId) {
 		this.officeId = officeId;
 	}
 

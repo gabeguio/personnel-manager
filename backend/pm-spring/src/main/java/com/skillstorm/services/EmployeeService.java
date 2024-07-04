@@ -37,7 +37,7 @@ public class EmployeeService {
             		.body(null);
         }
 
-        if (employee.getOffice() != null && employee.getOffice().getOfficeId() != 0) {
+        if (employee.getOffice() != null && employee.getOffice().getOfficeId() != null) {
             Optional<Office> officeOptional = officeRepo.findById(employee.getOffice().getOfficeId());
             if (officeOptional.isPresent()) {
                 Office office = officeOptional.get();
@@ -99,7 +99,7 @@ public class EmployeeService {
                 .body(null);
         }
 
-        if (employee.getOffice() != null && employee.getOffice().getOfficeId() != 0) {
+        if (employee.getOffice() != null && employee.getOffice().getOfficeId() != null) {
             Optional<Office> officeOptional = officeRepo.findById(employee.getOffice().getOfficeId());
             if (officeOptional.isPresent()) {
                 Office office = officeOptional.get();
