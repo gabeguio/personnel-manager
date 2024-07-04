@@ -40,3 +40,21 @@ p {
     color: var(--clr-gray600);
     font-weight: normal;
 }
+
+.header-bar {
+    padding: 2em;
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header-bar svg {
+    width: 24px;
+    height: 24px;
+    margin-right: 4px;
+}
