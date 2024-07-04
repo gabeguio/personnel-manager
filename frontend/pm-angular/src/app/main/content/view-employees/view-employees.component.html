@@ -1,11 +1,13 @@
 <div class="content-container">
-    <h1 class="content-header-title">
-        Employees
-    </h1>
-    <button class="btn">
-        <img src="/public/icons/plus.svg" alt="Plus Icon">
-        <span>New Employee</span>
-    </button>
+    <div class="content-header">
+        <h1 class="content-header-title">
+            Employees
+        </h1>
+        <button class="btn">
+            <img src="/icons/plus.svg" alt="Plus Icon">
+            <span>New Employee</span>
+        </button>
+    </div>
 </div>
 <div class="content-display">
     <div>
@@ -21,7 +23,11 @@
             </thead>
             <tbody>
                 <tr *ngFor="let employee of employees">
-                    <td class="tableName">{{ employee.firstName + " " + employee.lastName}} <p>{{ employee.email }}</p></td>
+                    <td class="table-cell-link">
+                        <a src="" routerLink="" alt="">{{ employee.firstName + " " + employee.lastName}}    
+                            <p class="table-cell-subtitle">{{ employee.email }}</p>
+                        </a>
+                    </td>
                     <td class="tableAttribute">{{ employee.jobTitle ? employee.jobTitle : 'Pending...' }}</td>
                     <td class="tableAttribute">{{ employee.employementStatus }}</td>
                     <td class="tableAttribute">{{ employee.departmentName ? employee.departmentName : 'Pending...' }}</td>

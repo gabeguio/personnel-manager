@@ -1,13 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 // HttpCommonModule
 
 @Component({
   selector: 'app-view-employees',
   standalone: true,
-  imports: [CommonModule, HttpClientModule],
+  imports: [CommonModule, HttpClientModule, RouterLink],
   templateUrl: './view-employees.component.html',
   styleUrl: './view-employees.component.css'
 })
