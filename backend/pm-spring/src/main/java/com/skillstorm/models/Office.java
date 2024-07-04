@@ -28,6 +28,9 @@ public class Office {
 	@Column(name = "street_address")
 	private String streetAddress;
 	
+	@Column(name = "city")
+	private String city;
+	
 	@Column(name = "state")
 	private String state;
 	
@@ -42,12 +45,13 @@ public class Office {
 		super();
 	}
 
-	public Office(int officeId, String maxCapacity, String streetAddress, String state, String phone,
+	public Office(int officeId, String maxCapacity, String streetAddress, String city, String state, String phone,
 			List<Employee> employees) {
 		super();
 		this.officeId = officeId;
 		this.maxCapacity = maxCapacity;
 		this.streetAddress = streetAddress;
+		this.city = city;
 		this.state = state;
 		this.phone = phone;
 		this.employees = employees;
@@ -75,6 +79,14 @@ public class Office {
 
 	public void setStreetAddress(String streetAddress) {
 		this.streetAddress = streetAddress;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
 	}
 
 	public String getState() {
