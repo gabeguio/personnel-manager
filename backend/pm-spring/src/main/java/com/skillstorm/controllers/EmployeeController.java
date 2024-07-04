@@ -57,14 +57,5 @@ public class EmployeeController {
 	public void deleteEmployeeById(@PathVariable int employeeId) {
 		service.deleteEmployeeById(employeeId);
 	}
-	
-	//	@GetMapping
-	//	public Iterable<Employee> getAllDepartments() {
-	//		return service.getAllEmployees();
-	//	}
-	//	
-	//	@PostMapping
-	//	public Employee createEmployee(@RequestBody Employee employee) {
-	//		return service.createEmployee(employee);
-	//	}
+
 }

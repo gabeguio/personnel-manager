@@ -20,7 +20,7 @@ public class Office {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "office_id")
-	private Integer officeId;
+	private int officeId;
 	
 	@Column(name = "max_capacity")
 	private int maxCapacity;
