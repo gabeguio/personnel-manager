@@ -15,8 +15,7 @@ import { OfficeService } from '../../../services/office.service';
 export class EditOfficeByIdComponent {
   office: Office = new Office(0,0,"","","","");
 
-  officeId: number = 0;
-  shortAddress: string = "";
+  currentOfficeId: number = 0;
 
   constructor(private route: ActivatedRoute, private officeService: OfficeService, private router: Router) {
     this.getOfficeById();
@@ -26,12 +25,14 @@ export class EditOfficeByIdComponent {
     this.officeService.getOfficeById(this.route.snapshot.params['id'])
                     .subscribe(data => {
 
-                      this.officeId = data.body.officeId;
-                      this.shortAddress = data.body.city + ", " + data.body.state;
+                      this.currentOfficeId = data.body.officeId;
 
-                      
-
-
+                      this.office.officeId = data.body.officeId;
+                      this.office.maxCapacity = data.body.maxCapacity;
+                      this.office.streetAddress = data.body.streetAddress;
+                      this.office.city = data.body.city;
+                      this.office.state = data.body.state;
+                      this.office.phone = data.body.phone;
                     });
   }
 
@@ -62,7 +63,7 @@ export class EditOfficeByIdComponent {
   }
 
   deleteThisOffice() {
-    this.deleteOffice(this.officeId);
+    this.deleteOffice(this.currentOfficeId);
   }
 }
 

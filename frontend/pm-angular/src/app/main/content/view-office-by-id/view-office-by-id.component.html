@@ -6,13 +6,19 @@
                 Office #{{ currentOfficeId }}
             </p>
         </div>
-
-        <button class="btn">
-            <a class="link-container" [routerLink]="['/add/office']">
-                <img src="/icons/plus.svg" alt="Plus Icon">
-                <span>New Office</span>   
-            </a>
-        </button>
+        
+        <div class="button-container">
+            <button class="btn">
+                <a class="link-container" [routerLink]="['/edit/office', currentOfficeId]">
+                    <span>Edit Office</span>   
+                </a>
+            </button>
+            <button class="btn">
+                <a class="link-container">
+                    <span>Delete Office</span>   
+                </a>
+            </button>
+        </div>
     </div>
     <div class="content-display">
         <table class="content-display-table">
