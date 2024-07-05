@@ -1,11 +1,11 @@
 // view-employee-by-id.component.ts
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { EmployeeService } from '../../../services/employee-service.service';
 import { CommonModule } from '@angular/common';
 import { Employee } from '../../../models/employee';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { EmployeeService } from '../../../services/employee.service';
 
 @Component({
   selector: 'app-view-employee-by-id',
@@ -53,7 +53,11 @@ export class ViewEmployeeByIdComponent {
           console.log(err.message);
           console.log(err.headers);
         },     
-        complete: () => console.log('Complete') 
+        complete: () => {
+          console.log('Complete')
+          this.router.navigate(['/employees']); 
+        } 
+        
         } 
     );
   }

@@ -1,9 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { EmployeeService } from '../../../services/employee-service.service';
 import { Employee } from '../../../models/employee';
 import { FormsModule } from '@angular/forms';
 import { Office } from '../../../models/office';
+import { EmployeeService } from '../../../services/employee.service';
 
 @Component({
   selector: 'app-add-new-employee',

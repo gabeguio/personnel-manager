@@ -22,9 +22,8 @@ export class EmployeeService {
     return this.http.get('http://localhost:8080/employee/' + employeeId, { observe : 'response' });
   }
 
-  // // a POST request to create a employee (Department object in the body)
+  // // a POST request to create a employee (employee object in the body)
   createEmployee(employee: Employee): Observable<HttpResponse<any>> {
-    console.log(employee);
     return this.http.post('http://localhost:8080/employee', employee, { observe : 'response' });
   } 
 

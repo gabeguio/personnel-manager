@@ -2,7 +2,8 @@ import { Component} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Employee } from '../../../models/employee';
 import { RouterModule } from '@angular/router';
-import { EmployeeService } from '../../../services/employee-service.service';
+import { EmployeeService } from '../../../services/employee.service';
+
 
 @Component({
   selector: 'app-view-employees',

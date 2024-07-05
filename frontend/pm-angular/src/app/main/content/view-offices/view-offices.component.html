@@ -1,0 +1,52 @@
+<div class="content-container">
+    <div class="content-header">
+        <div class="content-header-title">
+            <h1>Offices</h1>
+            <p>
+                Total Offices: {{ totalOffices }}
+            </p>
+        </div>
+
+        <button class="btn">
+            <a class="link-container" > <!-- [routerLink]="['/add/office']" -->
+                <img src="/icons/plus.svg" alt="Plus Icon">
+                <span>New Office</span>   
+            </a>
+        </button>
+    </div>
+    <div class="content-display">
+        <table class="content-display-table">
+            <thead>
+                <tr>
+                    <th>Office Id</th>
+                    <th>Employee Capacity</th>
+                    <th>Street Address</th>
+                    <th>State</th>
+                    <th>Phone Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let office of offices">
+                    <td class="table-cell-link">
+                        <a >{{ office.officeId }}</a> <!-- [routerLink]="['/office', office.officeId]" -->
+                    </td>
+                    <td class="tableAttribute">{{ office.employees.length + "/" + office.maxCapacity }}</td>
+                    <td class="tableAttribute">{{ office.streetAddress }}</td>
+                    <td class="tableAttribute">{{ office.state }}</td>
+                    <td class="tableAttribute">{{ office.phone }}</td>
+                </tr>
+        </table>
+    </div>
+        <div class="page-control-container">
+            <a (click)="goToPreviousPage()" [class.disabled]="currentPage === 0">
+              <img src="/icons/arrow-left-circle.svg" alt="Chevron Left Icon"/>
+            </a>
+            <div class="page-info-container">
+              <span>Page: {{ currentPage + 1 }} of {{ totalPages }}</span>
+            </div>
+            <a (click)="goToNextPage()" [class.disabled]="currentPage === totalPages - 1">
+              <img src="/icons/arrow-right-circle.svg" alt="Chevron Right Icon"/>
+            </a>
+          </div>
+        
+</div>
