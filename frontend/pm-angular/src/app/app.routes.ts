@@ -6,12 +6,13 @@ import { AddNewEmployeeComponent } from './main/content/add-new-employee/add-new
 import { ViewOfficesComponent } from './main/content/view-offices/view-offices.component';
 import { ViewOfficeByIdComponent } from './main/content/view-office-by-id/view-office-by-id.component';
 import { EditOfficeByIdComponent } from './main/content/edit-office-by-id/edit-office-by-id.component';
+import { AddNewOfficeComponent } from './main/content/add-new-office/add-new-office.component';
 
 export const routes: Routes = [
-    {
-        path: '',
-        component: BlankComponent
-    },
+    // {
+    //     path: '',
+    //     component: BlankComponent
+    // },
     {
         path:'employees',
         component: ViewEmployeesComponent
@@ -35,5 +36,9 @@ export const routes: Routes = [
     {
         path: 'edit/office/:id',
         component: EditOfficeByIdComponent
+    },
+    {
+        path: 'add/office',
+        component: AddNewOfficeComponent
     }
 ];

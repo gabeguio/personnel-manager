@@ -1,0 +1,54 @@
+<div class="content-header">
+    <div class="content-header-title">
+        <h1>Add New Office</h1>
+    </div>
+</div>
+<div class="form-display">
+    <form>
+    <div class="input-container">
+    <label for="putFormMaxCapacity">Max Employee Capacity: </label>
+    <input type="text"
+           id="putFormMaxCapacity"
+           name="putFormMaxCapacity"
+           [(ngModel)]="office.maxCapacity">
+    </div>
+
+    <div class="input-container">
+        <label for="putFormStreetAddress">Street Address: </label>
+        <input type="text"
+               id="putFormStreetAddress"
+               name="putFormStreetAddress"
+               [(ngModel)]="office.streetAddress">
+        </div>
+
+    <div class="input-container">
+    <label for="putFormCity">City: </label>
+    <input type="text"
+            id="putFormCity"
+            name="putFormCity"
+            [(ngModel)]="office.city">
+    </div>
+
+    <div class="input-container">
+    <label for="putFormState">State: </label>
+    <input type="text"
+            id="putFormState"
+            name="putFormState"
+            [(ngModel)]="office.state">
+    </div>
+        
+    <div class="input-container">
+    <label for="putFormPhone">Phone Number: </label>
+    <input type="text"
+            id="putFormPhone"
+            name="putFormPhone"
+            [(ngModel)]="office.phone">
+    </div>
+    
+    <div class="button-container">
+        <!-- <button class="btn" (click)="updateEmployee()">Cancel</button> -->
+        <button class="btn" (click)="createOffice()">Save</button>
+    </div>
+
+</form>
+</div>

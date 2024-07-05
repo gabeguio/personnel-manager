@@ -62,13 +62,13 @@ export class ViewOfficeByIdComponent {
   //   );
   // }
 
-  // deleteOffice(officeId: number) {
-  //   this.officeService.deleteOffice(officeId).subscribe(data => {
-  //     this.router.navigate(['/offices']);
-  //   });
-  // }
+  deleteOffice(officeId: number) {
+    this.officeService.deleteOffice(officeId).subscribe(data => {
+      this.router.navigate(['/offices']);
+    });
+  }
 
-  // deleteThisOffice() {
-  //   this.deleteOffice(this.officeId);
-  // }
+  deleteThisOffice() {
+    this.deleteOffice(this.currentOfficeId);
+  }
 }
