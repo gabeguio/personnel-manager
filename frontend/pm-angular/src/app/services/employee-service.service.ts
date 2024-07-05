@@ -23,19 +23,10 @@ export class EmployeeService {
   }
 
   // // a POST request to create a Department (Department object in the body)
-  // createDepartment(department: Department): Observable<HttpResponse<any>> {
-  //   return this.http.post(this.url + 'department', 
-  //                         department,
-  //                         // new Department(
-  //                         //   123, 'Test Post Department Q', []
-  //                         // ),
-  //                         // the above is equivalent to this but with an
-  //                         // enforced adherence to the Department format
-  //                         // { "departmentId": 30,
-  //                         //   "departmentName": "Test Post Department X",
-  //                         //   "employees": [] }, 
-  //                         { observe : 'response' });
-  // }
+  createEmployee(employee: Employee): Observable<HttpResponse<any>> {
+    console.log(employee);
+    return this.http.post('http://localhost:8080/employee', employee, { observe : 'response' });
+  } 
 
   // // a PUT request to update a Department
   // // request parameters for name and id, List of employees in the body

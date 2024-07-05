@@ -22,6 +22,18 @@
     color: var(--clr-gray600);
 }
 
+.link-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+}
+
+.link-container span {
+    color: var(--clr-light);
+}
+
+
 .content-display-table {
     width: 100%;
     border-collapse: collapse;

@@ -8,8 +8,10 @@
         </div>
 
         <button class="btn">
-            <img src="/icons/plus.svg" alt="Plus Icon">
-            <span>New Employee</span>
+            <a class="link-container" [routerLink]="['/add/employee']">
+                <img src="/icons/plus.svg" alt="Plus Icon">
+                <span>New Employee</span>   
+            </a>
         </button>
     </div>
     <div class="content-display">

@@ -17,5 +17,5 @@ export class Office {
         this.phone = phone;
         this.employees = [];
     }
-    
+
 }
