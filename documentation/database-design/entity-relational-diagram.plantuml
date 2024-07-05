@@ -5,6 +5,7 @@ Entity Office {
     ---
     * max_capacity : INT
     * street_address : VARCHAR(60)
+    * city : VARCHAR(30)
     * state : VARCHAR(2)
     * phone : VARCHAR(20)
 }
