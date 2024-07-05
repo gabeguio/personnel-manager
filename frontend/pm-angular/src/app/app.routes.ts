@@ -4,6 +4,7 @@ import { ViewEmployeesComponent } from './main/content/view-employees/view-emplo
 import { ViewEmployeeByIdComponent } from './main/content/view-employee-by-id/view-employee-by-id.component';
 import { AddNewEmployeeComponent } from './main/content/add-new-employee/add-new-employee.component';
 import { ViewOfficesComponent } from './main/content/view-offices/view-offices.component';
+import { ViewOfficeByIdComponent } from './main/content/view-office-by-id/view-office-by-id.component';
 
 export const routes: Routes = [
     {
@@ -25,5 +26,9 @@ export const routes: Routes = [
     {
         path: 'offices',
         component: ViewOfficesComponent
+    },
+    {
+        path: 'office/:id',
+        component: ViewOfficeByIdComponent
     }
 ];

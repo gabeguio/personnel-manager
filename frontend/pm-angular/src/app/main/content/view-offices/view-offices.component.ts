@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { Office } from '../../../models/office';
 import { OfficeService } from '../../../services/office.service';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-view-offices',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './view-offices.component.html',
   styleUrl: './view-offices.component.css'
 })

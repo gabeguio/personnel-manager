@@ -1,9 +1,9 @@
 <div class="content-container">
     <div class="content-header">
         <div class="content-header-title">
-            <h1>Offices</h1>
+            <h1>{{ shortAddress }}</h1>
             <p>
-                Total Offices: {{ totalOffices }}
+                Office #{{ currentOfficeId }}
             </p>
         </div>
 
@@ -18,26 +18,27 @@
         <table class="content-display-table">
             <thead>
                 <tr>
-                    <th>Office Id</th>
-                    <th>Employee Capacity</th>
-                    <th>Street Address</th>
-                    <th>State</th>
-                    <th>Phone Number</th>
+                    <th>Employee Name</th>
+                    <th>Job Title</th>
+                    <th>Employment Status</th>
+                    <th>Department</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let office of offices">
+                <tr *ngFor="let employee of office.employees">
                     <td class="table-cell-link">
-                        <a [routerLink]="['/office/', office.officeId]">{{ office.officeId }}</a>
+                        <a [routerLink]="['/employee', employee.employeeId]">
+                        {{ employee.firstName + " " + employee.lastName}}    
+                            <p class="table-cell-subtitle">{{ employee.email }}</p>
+                        </a>
                     </td>
-                    <td class="tableAttribute">{{ office.employees.length + "/" + office.maxCapacity }}</td>
-                    <td class="tableAttribute">{{ office.streetAddress }}</td>
-                    <td class="tableAttribute">{{ office.state }}</td>
-                    <td class="tableAttribute">{{ office.phone }}</td>
+                    <td class="tableAttribute">{{ employee.jobTitle ? employee.jobTitle : 'N/A' }}</td>
+                    <td class="tableAttribute">{{ employee.employmentStatus }}</td>
+                    <td class="tableAttribute">{{ employee.departmentName ? employee.departmentName : 'N/A' }}</td>
                 </tr>
         </table>
     </div>
-        <div class="page-control-container">
+        <!-- <div class="page-control-container">
             <a (click)="goToPreviousPage()" [class.disabled]="currentPage === 0">
               <img src="/icons/arrow-left-circle.svg" alt="Chevron Left Icon"/>
             </a>
@@ -47,6 +48,6 @@
             <a (click)="goToNextPage()" [class.disabled]="currentPage === totalPages - 1">
               <img src="/icons/arrow-right-circle.svg" alt="Chevron Right Icon"/>
             </a>
-          </div>
+          </div> -->
         
 </div>

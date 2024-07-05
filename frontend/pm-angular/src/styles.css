@@ -54,7 +54,7 @@ html {
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: var(--clr-light);
+  background-color: var(--clr-gray600);
   color: var(--clr-dark);
 }
 
