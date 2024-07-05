@@ -1,30 +1,63 @@
+import { Component, OnInit } from '@angular/core';
+import { HttpResponse } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
-
-// HttpCommonModule
+import { HttpService } from '../../../services/http.service';
+import { Employee } from '../../../models/employee';
 
 @Component({
   selector: 'app-view-employees',
   standalone: true,
-  imports: [CommonModule, HttpClientModule, RouterLink],
+  imports: [CommonModule],
   templateUrl: './view-employees.component.html',
   styleUrl: './view-employees.component.css'
 })
 export class ViewEmployeesComponent {
-  data: any = [];
-  employees: any = [];
 
-  constructor(private http: HttpClient) {
+  employees: Employee[] = [];
+  currentPage: number = 0;
+  totalPages: number = 1;
+  totalEmployees: number = 0;
+  constructor(private httpService: HttpService) {
+    this.getEmployeesByPage(this.currentPage);
+  }
 
-    http.get('//localhost:8080/employee/page', { observe: 'response' })
-      .subscribe(response => {
-        this.data = response.body;
+  getEmployeesByPage(page: number): void {
+    this.httpService.getEmployeesByPage(page)
+        .subscribe(response => {
+            console.log(response.body)
+            this.employees = [];
+            this.currentPage = response.body.pageNumber;
+            this.totalPages = response.body.totalPages;
+            this.currentPage = response.body.pageNumber;
+            this.totalEmployees = response.body.totalElements;
 
-        if (this.data)
-          this.employees = this.data.content;
-        console.log(this.employees)
-      })
+            for (let item of response.body.content) {
+              console.log(item);
+              const officeId = item.office == null ? null : item.office.officeId;
+              this.employees.push(
+                new Employee(item.employeeId,
+                             item.firstName,
+                             item.lastName,
+                             item.jobTitle,
+                             item.employmentStatus,
+                             item.email,
+                             item.departmentName,
+                             officeId)
+              );
+            }
+          
+        });
+  }
+
+  goToPreviousPage(): void {
+    if (this.currentPage > 0) {
+      this.getEmployeesByPage(this.currentPage - 1);
+    }
+  }
+
+  goToNextPage(): void {
+    if (this.currentPage < this.totalPages - 1) {
+      this.getEmployeesByPage(this.currentPage + 1);
+    }
   }
 }

@@ -30,7 +30,7 @@ public class Employee {
 	private String jobTitle;
 	
 	@Column(name = "employment_status")
-	private String employementStatus;
+	private String employmentStatus;
 	
 	@Column(name = "email")
 	private String email;
@@ -47,14 +47,14 @@ public class Employee {
 		super();
 	}
 
-	public Employee(int employeeId, String firstName, String lastName, String jobTitle, String employementStatus,
+	public Employee(int employeeId, String firstName, String lastName, String jobTitle, String employmentStatus,
 			String email, String departmentName, Office office) {
 		super();
 		this.employeeId = employeeId;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.jobTitle = jobTitle;
-		this.employementStatus = employementStatus;
+		this.employmentStatus = employmentStatus;
 		this.email = email;
 		this.departmentName = departmentName;
 		this.office = office;
@@ -92,12 +92,12 @@ public class Employee {
 		this.jobTitle = jobTitle;
 	}
 
-	public String getEmployementStatus() {
-		return employementStatus;
+	public String getEmploymentStatus() {
+		return employmentStatus;
 	}
 
-	public void setEmployementStatus(String employementStatus) {
-		this.employementStatus = employementStatus;
+	public void setEmploymentStatus(String employmentStatus) {
+		this.employmentStatus = employmentStatus;
 	}
 
 	public String getEmail() {

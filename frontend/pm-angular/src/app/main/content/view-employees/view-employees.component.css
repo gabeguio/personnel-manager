@@ -11,10 +11,15 @@
     color: var(--clr-light);
 }
 
-.content-header-title {
+.content-header-title h1 {
     font-size: 36px;
     font-weight: 600;
     color: var(--clr-dark);
+}
+
+.content-header-title p {
+    font-size: 16px;
+    color: var(--clr-gray600);
 }
 
 .content-display-table {
@@ -88,3 +93,28 @@ button {
     height: 24px;
     margin-right: 4px;
 }
+
+.page-control-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 2em;
+    background-color: var(--clr-light);
+    border-top: 1px solid var(--clr-gray200);
+}
+
+.page-control-container a img {
+    width: 36px;
+    height: 36px;
+    margin-right: 0.5em;
+}
+
+.page-control-container a .page-icon:hover {
+    color: var(--clr-gray600);
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  

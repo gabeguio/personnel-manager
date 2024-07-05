@@ -1,16 +1,18 @@
 <div class="content-container">
     <div class="content-header">
-        <h1 class="content-header-title">
-            Employees
-        </h1>
+        <div class="content-header-title">
+            <h1>Employees</h1>
+            <p>
+                Total Employees: {{ totalEmployees }}
+            </p>
+        </div>
+
         <button class="btn">
             <img src="/icons/plus.svg" alt="Plus Icon">
             <span>New Employee</span>
         </button>
     </div>
-</div>
-<div class="content-display">
-    <div>
+    <div class="content-display">
         <table class="content-display-table">
             <thead>
                 <tr>
@@ -28,11 +30,23 @@
                             <p class="table-cell-subtitle">{{ employee.email }}</p>
                         </a>
                     </td>
-                    <td class="tableAttribute">{{ employee.jobTitle ? employee.jobTitle : 'Pending...' }}</td>
-                    <td class="tableAttribute">{{ employee.employementStatus }}</td>
-                    <td class="tableAttribute">{{ employee.departmentName ? employee.departmentName : 'Pending...' }}</td>
-                    <td class="tableAttribute">{{ employee.office.officeId }}</td>
+                    <td class="tableAttribute">{{ employee.jobTitle ? employee.jobTitle : 'N/A' }}</td>
+                    <td class="tableAttribute">{{ employee.employmentStatus }}</td>
+                    <td class="tableAttribute">{{ employee.departmentName ? employee.departmentName : 'N/A' }}</td>
+                    <td class="tableAttribute">{{ employee.officeId ? employee.officeId : 'N/A' }}</td>
                 </tr>
         </table>
     </div>
+        <div class="page-control-container">
+            <a (click)="goToPreviousPage()" [class.disabled]="currentPage === 0">
+              <img src="/icons/arrow-left-circle.svg" alt="Chevron Left Icon"/>
+            </a>
+            <div class="page-info-container">
+              <span>Page: {{ currentPage + 1 }} of {{ totalPages }}</span>
+            </div>
+            <a (click)="goToNextPage()" [class.disabled]="currentPage === totalPages - 1">
+              <img src="/icons/arrow-right-circle.svg" alt="Chevron Right Icon"/>
+            </a>
+          </div>
+        
 </div>
