@@ -5,6 +5,7 @@ import { EmployeeService } from '../../../services/employee-service.service';
 import { CommonModule } from '@angular/common';
 import { Employee } from '../../../models/employee';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-view-employee-by-id',
@@ -19,7 +20,7 @@ export class ViewEmployeeByIdComponent {
   employeeId: number = 0;
   employeName: string = "";
 
-  constructor(private route: ActivatedRoute, private employeeService: EmployeeService) {
+  constructor(private route: ActivatedRoute, private employeeService: EmployeeService, private router: Router) {
     this.getEmployeeById();
   }
 
@@ -41,8 +42,6 @@ export class ViewEmployeeByIdComponent {
                     });
   }
 
-  // formEmployee: Employee = new Employee(0,"","","","","","");
-
   updateEmployee() {
     this.employeeService.updateEmployee(this.employee).subscribe(
         {
@@ -59,13 +58,13 @@ export class ViewEmployeeByIdComponent {
     );
   }
 
+  deleteEmployee(employeeId: number) {
+    this.employeeService.deleteEmployee(employeeId).subscribe(data => {
+      this.router.navigate(['/employees']);
+    });
+  }
 
-  // a method for updating our current Department
-  // updateEmployee() {
-  //   this.employeeService.updateEmployee(this.updateEmployee)
-  //       .subscribe(data => {
-  //         this.getEmployeeById();
-  //       });
-  // }
-
+  deleteThisEmployee() {
+    this.deleteEmployee(this.employeeId);
+  }
 }
