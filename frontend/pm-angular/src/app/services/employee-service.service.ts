@@ -1,18 +1,12 @@
-import { HttpClient, HttpParams, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Employee } from '../models/employee';
 
-// in Angular @something is called a Decorator
-// basically just like a Spring annotation
-// indicates the function/type of a file
-
-// @Injectable means this is a service that can be injected
-// as a dependency in another component
 @Injectable({
   providedIn: 'root'
 })
-export class HttpService {
+export class EmployeeService {
 
   constructor(private http: HttpClient) { }
 
@@ -25,7 +19,7 @@ export class HttpService {
 
   // a GET request for a single employee (by id as a path variable)
   getEmployeeById(employeeId: number): Observable<HttpResponse<any>> {
-    return this.http.get(this.url + 'employee/' + employeeId, { observe : 'response' });
+    return this.http.get('http://localhost:8080/employee/' + employeeId, { observe : 'response' });
   }
 
   // // a POST request to create a Department (Department object in the body)
@@ -43,11 +37,21 @@ export class HttpService {
   //                         { observe : 'response' });
   // }
 
+  // // a PUT request to update a Department
+  // // request parameters for name and id, List of employees in the body
+  // updateDepartment(department: Department): Observable<HttpResponse<any>> {
+
+  //   // assembling an HttpParams object for our request parameters and setting values
+  //   let parameters = new HttpParams()
+  //                        .set('id', department.departmentId)
+  //                        .set('name', department.departmentName);
+
   // // a PUT request to update an employee
   updateEmployee(employee: Employee): Observable<HttpResponse<any>> {
-    return this.http.put(this.url + 'employee', employee, { observe : 'response' });
+    console.log(employee);
+    return this.http.put('http://localhost:8080/employee', employee, { observe : 'response' });
   }
-
+  
   // // a DELETE request to delete a Department (by id as a path variable)
   // deleteDepartment(departmentId: number): Observable<HttpResponse<any>> {
   //   return this.http.delete(this.url + 'department/' + departmentId, { observe: 'response'});

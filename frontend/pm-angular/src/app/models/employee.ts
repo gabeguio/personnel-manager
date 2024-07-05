@@ -9,9 +9,9 @@ export class Employee {
     employmentStatus: string;
     email: string;
     departmentName: string;
-    officeId: number;
+    office: any;
 
-    constructor(employeeId: number, firstName: string, lastName: string, jobTitle: string, employmentStatus: string, email: string, departmentName: string, officeId: number) {
+    constructor(employeeId: number, firstName: string, lastName: string, jobTitle: string, employmentStatus: string, email: string, departmentName: string) {
         this.employeeId = employeeId;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -19,6 +19,6 @@ export class Employee {
         this.employmentStatus = employmentStatus;
         this.email = email;
         this.departmentName = departmentName;
-        this.officeId = officeId;
+        this.office = new Office(0,0,"","","","");
     }
 }

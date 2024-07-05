@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpResponse } from '@angular/common/http';
+import { Component} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpService } from '../../../services/http.service';
 import { Employee } from '../../../models/employee';
+import { RouterModule } from '@angular/router';
+import { EmployeeService } from '../../../services/employee-service.service';
 
 @Component({
   selector: 'app-view-employees',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './view-employees.component.html',
   styleUrl: './view-employees.component.css'
 })
@@ -17,14 +17,13 @@ export class ViewEmployeesComponent {
   currentPage: number = 0;
   totalPages: number = 1;
   totalEmployees: number = 0;
-  constructor(private httpService: HttpService) {
+  constructor(private employeeService: EmployeeService) {
     this.getEmployeesByPage(this.currentPage);
   }
 
   getEmployeesByPage(page: number): void {
-    this.httpService.getEmployeesByPage(page)
+    this.employeeService.getEmployeesByPage(page)
         .subscribe(response => {
-            console.log(response.body)
             this.employees = [];
             this.currentPage = response.body.pageNumber;
             this.totalPages = response.body.totalPages;
@@ -32,21 +31,19 @@ export class ViewEmployeesComponent {
             this.totalEmployees = response.body.totalElements;
 
             for (let item of response.body.content) {
-              console.log(item);
               const officeId = item.office == null ? null : item.office.officeId;
-              this.employees.push(
-                new Employee(item.employeeId,
-                             item.firstName,
-                             item.lastName,
-                             item.jobTitle,
-                             item.employmentStatus,
-                             item.email,
-                             item.departmentName,
-                             officeId)
-              );
+              const tempEmployee: Employee = new Employee(item.employeeId,
+                                                          item.firstName,
+                                                          item.lastName,
+                                                          item.jobTitle,
+                                                          item.employmentStatus,
+                                                          item.email,
+                                                          item.departmentName);  
+              tempEmployee.office.officeId = officeId;
+              this.employees.push(tempEmployee);
+              } 
             }
-          
-        });
+          );
   }
 
   goToPreviousPage(): void {

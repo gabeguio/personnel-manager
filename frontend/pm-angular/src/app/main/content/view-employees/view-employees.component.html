@@ -26,14 +26,14 @@
             <tbody>
                 <tr *ngFor="let employee of employees">
                     <td class="table-cell-link">
-                        <a src="" routerLink="" alt="">{{ employee.firstName + " " + employee.lastName}}    
+                        <a [routerLink]="['/employee', employee.employeeId]">{{ employee.firstName + " " + employee.lastName}}    
                             <p class="table-cell-subtitle">{{ employee.email }}</p>
                         </a>
                     </td>
                     <td class="tableAttribute">{{ employee.jobTitle ? employee.jobTitle : 'N/A' }}</td>
                     <td class="tableAttribute">{{ employee.employmentStatus }}</td>
                     <td class="tableAttribute">{{ employee.departmentName ? employee.departmentName : 'N/A' }}</td>
-                    <td class="tableAttribute">{{ employee.officeId ? employee.officeId : 'N/A' }}</td>
+                    <td class="tableAttribute">{{ employee.office.officeId ? employee.office.officeId : 'N/A' }}</td>
                 </tr>
         </table>
     </div>

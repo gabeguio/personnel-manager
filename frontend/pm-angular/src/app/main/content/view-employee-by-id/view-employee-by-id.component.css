@@ -1,0 +1,67 @@
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em;
+    margin-bottom: 1em;
+    border-bottom: 1px solid var(--clr-gray200);
+}
+
+.content-header img {
+    margin-right: 0.5em;
+    color: var(--clr-light);
+}
+
+.content-header-title h1 {
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--clr-dark);
+}
+
+.content-header-title p {
+    font-size: 16px;
+    color: var(--clr-gray600);
+}
+
+.form-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2em;
+}
+
+.input-container label {
+    font-size: 1em;
+    width: 150px;
+    text-align: left;
+    margin-right: 4em; /* Space between label and input */
+}
+
+/* Style for the input fields */
+.input-container input,
+.input-container select {
+    flex: 1;
+    padding: 0.5em;
+}
+
+/* Optional: Style for the form */
+form {
+    border: 1px solid var(--clr-gray200);
+    padding: 4em;
+    border-radius: 4px;
+    background: var(--clr-gray50);
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2em;
+}

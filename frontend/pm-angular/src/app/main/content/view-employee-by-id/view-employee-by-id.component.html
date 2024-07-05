@@ -1,0 +1,79 @@
+<div class="content-header">
+    <div class="content-header-title">
+        <h1>{{ employeName }}</h1>
+        <p>
+            Employee# {{ employeeId }}
+        </p>
+    </div>
+
+    <button class="btn">
+        <span>Delete Employee</span>
+    </button>
+</div>
+<div class="form-display">
+    <form>
+    <div class="input-container">
+    <label for="putFormFirstName">First Name: </label>
+    <input type="text"
+           id="putFormFirstName"
+           name="putFormFirstName"
+           [(ngModel)]="employee.firstName">
+    </div>
+
+    <div class="input-container">
+        <label for="putFormLastName">Last Name: </label>
+        <input type="text"
+               id="putFormLastName"
+               name="putFormLastName"
+               [(ngModel)]="employee.lastName">
+        </div>
+
+    <div class="input-container">
+    <label for="putFormEmail">Email: </label>
+    <input type="email"
+            id="putFormEmail"
+            name="putFormEmail"
+            [(ngModel)]="employee.email">
+    </div>
+
+    <div class="input-container">
+    <label for="putFormJobTitle">Job Title: </label>
+    <input type="text"
+            id="putFormJobTitle"
+            name="putFormJobTitle"
+            [(ngModel)]="employee.jobTitle">
+    </div>
+        
+    <div class="input-container">
+    <label for="putFormEmploymentStatus">Employement Status: </label>
+    <input type="text"
+            id="putFormEmploymentStatus"
+            name="putFormEmploymentStatus"
+            [(ngModel)]="employee.employmentStatus">
+    </div>
+
+    <div class="input-container">
+    <label for="putFormDepartmentName">Department Name: </label>
+    <input type="text"
+            id="putFormDepartmentName"
+            name="putFormDepartmentName"
+            [(ngModel)]="employee.departmentName">
+    </div>
+
+    <div class="input-container">
+    <label for="putFormOfficeId">Assign to Office: </label>
+    <input type="number"
+            id="putFormOfficeId"
+            name="putFormOfficeId"
+            [(ngModel)]="employee.office.officeId">
+    </div>
+
+    
+    
+    <div class="button-container">
+        <!-- <button class="btn" (click)="updateEmployee()">Cancel</button> -->
+        <button class="btn" (click)="updateEmployee()">Save</button>
+    </div>
+
+</form>
+</div>

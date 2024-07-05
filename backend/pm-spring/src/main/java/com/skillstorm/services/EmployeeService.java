@@ -95,7 +95,7 @@ public class EmployeeService {
     public ResponseEntity<Employee> updateEmployee(Employee employee) {
         if (!employeeRepo.existsById(employee.getEmployeeId())) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-                .header("Error", "Employee with this Id does not exist.")
+                .header("Message", "Employee with this Id does not exist.")
                 .body(null);
         }
 
@@ -106,7 +106,7 @@ public class EmployeeService {
 
                 if (office.getEmployees().size() >= office.getMaxCapacity()) {
                     return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-                    		.header("Error", "Adding this employee will exceed the office's maximum capacity.")
+                    		.header("Message", "Adding this employee will exceed the office's maximum capacity.")
                     		.body(null);
                 }
 
